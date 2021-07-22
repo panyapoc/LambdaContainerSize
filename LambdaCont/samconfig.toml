@@ -1,0 +1,11 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "checkride"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-nuo6aeuohjf0"
+s3_prefix = "checkride"
+region = "ap-southeast-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+image_repositories = ["HelloWorldContFunction=011777388888.dkr.ecr.ap-southeast-1.amazonaws.com/lambda-helloworld", "DataprocessContFunction=011777388888.dkr.ecr.ap-southeast-1.amazonaws.com/lambda-dataprocess", "Hash250ContFunction=011777388888.dkr.ecr.ap-southeast-1.amazonaws.com/lambda-hash250", "MLContFunction=011777388888.dkr.ecr.ap-southeast-1.amazonaws.com/lambda-ml"]

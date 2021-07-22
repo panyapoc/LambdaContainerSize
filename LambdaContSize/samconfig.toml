@@ -1,0 +1,11 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "checkride-contsize"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-nuo6aeuohjf0"
+s3_prefix = "checkride-contsize"
+region = "ap-southeast-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+image_repositories = ["Hash256=011777388888.dkr.ecr.ap-southeast-1.amazonaws.com/lambda-hash256", "Hash512=011777388888.dkr.ecr.ap-southeast-1.amazonaws.com/lambda-hash512", "Hash1024=011777388888.dkr.ecr.ap-southeast-1.amazonaws.com/lambda-hash1024", "Hash2048=011777388888.dkr.ecr.ap-southeast-1.amazonaws.com/lambda-hash2048", "Hash4096=011777388888.dkr.ecr.ap-southeast-1.amazonaws.com/lambda-hash4096", "Hash8192=011777388888.dkr.ecr.ap-southeast-1.amazonaws.com/lambda-hash8192"]

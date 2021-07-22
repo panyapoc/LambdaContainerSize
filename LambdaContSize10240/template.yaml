@@ -1,0 +1,87 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Serverless Checkride Functions
+Globals:
+  Function:
+    Timeout: 900
+    MemorySize: 10240
+
+Resources:
+  Hash256:
+    Type: AWS::Serverless::Function
+    Properties:
+      PackageType: Image
+      Events:
+        CloudWatchEvent:
+          Type: Schedule
+          Properties:
+            Schedule: cron(*/30 * * * ? *)
+    Metadata:
+      Dockerfile: Dockerfile
+      DockerContext: ./hash256
+      DockerTag: python3.8-v1
+  Hash512:
+    Type: AWS::Serverless::Function
+    Properties:
+      PackageType: Image
+      Events:
+        CloudWatchEvent:
+          Type: Schedule
+          Properties:
+            Schedule: cron(*/30 * * * ? *)
+    Metadata:
+      Dockerfile: Dockerfile
+      DockerContext: ./hash512
+      DockerTag: python3.8-v1
+  Hash1024:
+    Type: AWS::Serverless::Function
+    Properties:
+      PackageType: Image
+      Events:
+        CloudWatchEvent:
+          Type: Schedule
+          Properties:
+            Schedule: cron(*/30 * * * ? *)
+    Metadata:
+      Dockerfile: Dockerfile
+      DockerContext: ./hash1024
+      DockerTag: python3.8-v1
+  Hash2048:
+    Type: AWS::Serverless::Function
+    Properties:
+      PackageType: Image
+      Events:
+        CloudWatchEvent:
+          Type: Schedule
+          Properties:
+            Schedule: cron(*/30 * * * ? *)
+    Metadata:
+      Dockerfile: Dockerfile
+      DockerContext: ./hash2048
+      DockerTag: python3.8-v1
+  Hash4096:
+    Type: AWS::Serverless::Function
+    Properties:
+      PackageType: Image
+      Events:
+        CloudWatchEvent:
+          Type: Schedule
+          Properties:
+            Schedule: cron(*/30 * * * ? *)
+    Metadata:
+      Dockerfile: Dockerfile
+      DockerContext: ./hash4096
+      DockerTag: python3.8-v1
+  Hash8192:
+    Type: AWS::Serverless::Function
+    Properties:
+      PackageType: Image
+      Events:
+        CloudWatchEvent:
+          Type: Schedule
+          Properties:
+            Schedule: cron(*/30 * * * ? *)
+    Metadata:
+      Dockerfile: Dockerfile
+      DockerContext: ./hash8192
+      DockerTag: python3.8-v1

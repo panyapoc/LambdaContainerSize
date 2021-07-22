@@ -1,0 +1,122 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Serverless Checkride Functions
+Globals:
+  Function:
+    Timeout: 900
+    MemorySize: 128
+
+Resources:
+  HelloWorldLambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Description: HelloWorld Lambda
+      CodeUri: hello_world/
+      Handler: app.lambda_handler
+      Runtime: python3.8
+      Events:
+        CloudWatchEvent:
+          Type: Schedule
+          Properties:
+            Schedule: cron(*/30 * * * ? *)
+  HelloWorldContFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Description: HelloWorld Container
+      PackageType: Image
+      Events:
+        CloudWatchEvent:
+          Type: Schedule
+          Properties:
+            Schedule: cron(*/30 * * * ? *)
+    Metadata:
+      Dockerfile: Dockerfile
+      DockerContext: ./hello_world_cont
+      DockerTag: python3.8-v1
+
+  DataprocessFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Description: Dataprocess Function
+      CodeUri: dataprocess/
+      Handler: app.lambda_handler
+      Runtime: python3.8
+      Events:
+        CloudWatchEvent:
+          Type: Schedule
+          Properties:
+            Schedule: cron(*/30 * * * ? *)
+  DataprocessContFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Description: Dataprocess Cont Function
+      PackageType: Image
+      Events:
+        CloudWatchEvent:
+          Type: Schedule
+          Properties:
+            Schedule: cron(*/30 * * * ? *)
+    Metadata:
+      Dockerfile: Dockerfile
+      DockerContext: ./dataprocess_cont
+      DockerTag: python3.8-v1
+
+  Hash250Function:
+    Type: AWS::Serverless::Function
+    Properties:
+      Description: hash 250mb function
+      CodeUri: hash250/
+      Handler: app.lambda_handler
+      Runtime: python3.8
+      Events:
+        CloudWatchEvent:
+          Type: Schedule
+          Properties:
+            Schedule: cron(*/30 * * * ? *)
+  Hash250ContFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Description: hash 250mb Cont Function
+      PackageType: Image
+      Events:
+        CloudWatchEvent:
+          Type: Schedule
+          Properties:
+            Schedule: cron(*/30 * * * ? *)
+    Metadata:
+      Dockerfile: Dockerfile
+      DockerContext: ./hash250_cont
+      DockerTag: python3.8-v1
+
+
+  # MLFunction:
+  #   Type: AWS::Serverless::Function
+  #   Properties:
+  #     Description: ML Function
+  #     CodeUri: ml/
+  #     Handler: app.lambda_handler
+  #     Runtime: python3.8
+  #     Events:
+  #       CloudWatchEvent:
+  #         Type: Schedule
+  #         Properties:
+  #           Schedule: cron(*/30 * * * ? *)
+  # Unzipped size must be smaller than 262144000 bytes
+
+
+  MLContFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Description: ML Cont Function
+      PackageType: Image
+      Events:
+        CloudWatchEvent:
+          Type: Schedule
+          Properties:
+            Schedule: cron(*/30 * * * ? *)
+    Metadata:
+      Dockerfile: Dockerfile
+      DockerContext: ./ml_cont
+      DockerTag: python3.8-v1
+
+# Outputs:
