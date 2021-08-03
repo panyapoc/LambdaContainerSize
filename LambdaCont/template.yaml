@@ -61,6 +61,60 @@ Resources:
       DockerContext: ./dataprocess_cont
       DockerTag: python3.8-v1
 
+  SmallDataprocessFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Description: Small Dataprocess Function
+      CodeUri: small_dataprocess/
+      Handler: app.lambda_handler
+      Runtime: python3.8
+      Events:
+        CloudWatchEvent:
+          Type: Schedule
+          Properties:
+            Schedule: cron(*/30 * * * ? *)
+  SmallDataprocessContFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Description: Small Dataprocess Cont Function
+      PackageType: Image
+      Events:
+        CloudWatchEvent:
+          Type: Schedule
+          Properties:
+            Schedule: cron(*/30 * * * ? *)
+    Metadata:
+      Dockerfile: Dockerfile
+      DockerContext: ./small_dataprocess_cont
+      DockerTag: python3.8-v1
+
+  Hash128Function:
+    Type: AWS::Serverless::Function
+    Properties:
+      Description: hash 128mb function
+      CodeUri: hash128/
+      Handler: app.lambda_handler
+      Runtime: python3.8
+      Events:
+        CloudWatchEvent:
+          Type: Schedule
+          Properties:
+            Schedule: cron(*/30 * * * ? *)
+  Hash128ContFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Description: hash 128mb Cont Function
+      PackageType: Image
+      Events:
+        CloudWatchEvent:
+          Type: Schedule
+          Properties:
+            Schedule: cron(*/30 * * * ? *)
+    Metadata:
+      Dockerfile: Dockerfile
+      DockerContext: ./hash128_cont
+      DockerTag: python3.8-v1
+
   Hash250Function:
     Type: AWS::Serverless::Function
     Properties:

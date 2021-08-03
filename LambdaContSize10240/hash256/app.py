@@ -2,9 +2,9 @@ import json
 import hashlib
 
 BLOCKSIZE = 65536
-sha1 = hashlib.sha1()
 
 def lambda_handler(event, context):
+    sha1 = hashlib.sha1()
     with open('file.txt', 'rb') as afile:
         buf = afile.read(BLOCKSIZE)
         while len(buf) > 0:

@@ -22,38 +22,70 @@ source_md5 = ""
 packagetype = "Zip"
 functions = ["Hash250Function"]
 
-[function_build_definitions.6b611b75-17eb-4030-9a59-713f3dbca9fe]
+[function_build_definitions.cb684273-f0b7-478e-a454-5b932805abc6]
+codeuri = "/home/ec2-user/CheckRide/LambdaCont/small_dataprocess"
+runtime = "python3.8"
+source_md5 = ""
+packagetype = "Zip"
+functions = ["SmallDataprocessFunction"]
+
+[function_build_definitions.71666305-f21b-489b-98f9-edcecb7879c9]
+codeuri = "/home/ec2-user/CheckRide/LambdaCont/hash128"
+runtime = "python3.8"
+source_md5 = ""
+packagetype = "Zip"
+functions = ["Hash128Function"]
+
+[function_build_definitions.d74e7c0e-b9cb-4516-90f6-6bd1d5bb9e64]
 packagetype = "Image"
 functions = ["HelloWorldContFunction"]
 
-[function_build_definitions.6b611b75-17eb-4030-9a59-713f3dbca9fe.metadata]
+[function_build_definitions.d74e7c0e-b9cb-4516-90f6-6bd1d5bb9e64.metadata]
 Dockerfile = "Dockerfile"
 DockerContext = "/home/ec2-user/CheckRide/LambdaCont/hello_world_cont"
 DockerTag = "python3.8-v1"
 
-[function_build_definitions.1b04be57-8859-4934-b037-925206c45007]
+[function_build_definitions.98614232-6e6e-47fe-a118-35c2097dde2f]
 packagetype = "Image"
 functions = ["DataprocessContFunction"]
 
-[function_build_definitions.1b04be57-8859-4934-b037-925206c45007.metadata]
+[function_build_definitions.98614232-6e6e-47fe-a118-35c2097dde2f.metadata]
 Dockerfile = "Dockerfile"
 DockerContext = "/home/ec2-user/CheckRide/LambdaCont/dataprocess_cont"
 DockerTag = "python3.8-v1"
 
-[function_build_definitions.e20ee116-7649-42bf-8983-8e94b711f7c4]
+[function_build_definitions.63c293e3-0a53-413f-9ec3-8683f9ed885d]
+packagetype = "Image"
+functions = ["SmallDataprocessContFunction"]
+
+[function_build_definitions.63c293e3-0a53-413f-9ec3-8683f9ed885d.metadata]
+Dockerfile = "Dockerfile"
+DockerContext = "/home/ec2-user/CheckRide/LambdaCont/small_dataprocess_cont"
+DockerTag = "python3.8-v1"
+
+[function_build_definitions.b8a54757-13f1-40bd-bf3c-c35b7912faa0]
+packagetype = "Image"
+functions = ["Hash128ContFunction"]
+
+[function_build_definitions.b8a54757-13f1-40bd-bf3c-c35b7912faa0.metadata]
+Dockerfile = "Dockerfile"
+DockerContext = "/home/ec2-user/CheckRide/LambdaCont/hash128_cont"
+DockerTag = "python3.8-v1"
+
+[function_build_definitions.6a8373ad-6a59-4da7-b39a-eefdcff11ec6]
 packagetype = "Image"
 functions = ["Hash250ContFunction"]
 
-[function_build_definitions.e20ee116-7649-42bf-8983-8e94b711f7c4.metadata]
+[function_build_definitions.6a8373ad-6a59-4da7-b39a-eefdcff11ec6.metadata]
 Dockerfile = "Dockerfile"
 DockerContext = "/home/ec2-user/CheckRide/LambdaCont/hash250_cont"
 DockerTag = "python3.8-v1"
 
-[function_build_definitions.eb3d8c10-5619-450e-b738-0a2d01bc4ab6]
+[function_build_definitions.0710df9e-e9dd-45ea-bca5-c1c7da5a0963]
 packagetype = "Image"
 functions = ["MLContFunction"]
 
-[function_build_definitions.eb3d8c10-5619-450e-b738-0a2d01bc4ab6.metadata]
+[function_build_definitions.0710df9e-e9dd-45ea-bca5-c1c7da5a0963.metadata]
 Dockerfile = "Dockerfile"
 DockerContext = "/home/ec2-user/CheckRide/LambdaCont/ml_cont"
 DockerTag = "python3.8-v1"
