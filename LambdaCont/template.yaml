@@ -5,6 +5,7 @@ Globals:
   Function:
     Timeout: 900
     MemorySize: 128
+    Tracing: Active
 
 Resources:
   HelloWorldLambdaFunction:
@@ -142,19 +143,18 @@ Resources:
       DockerContext: ./hash250_cont
       DockerTag: python3.8-v1
 
-
-  # MLFunction:
-  #   Type: AWS::Serverless::Function
-  #   Properties:
-  #     Description: ML Function
-  #     CodeUri: ml/
-  #     Handler: app.lambda_handler
-  #     Runtime: python3.8
-  #     Events:
-  #       CloudWatchEvent:
-  #         Type: Schedule
-  #         Properties:
-  #           Schedule: cron(*/30 * * * ? *)
+  MLFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Description: ML Function
+      CodeUri: ml/
+      Handler: app.lambda_handler
+      Runtime: python3.8
+      Events:
+        CloudWatchEvent:
+          Type: Schedule
+          Properties:
+            Schedule: cron(*/30 * * * ? *)
   # Unzipped size must be smaller than 262144000 bytes
 
 
@@ -173,4 +173,58 @@ Resources:
       DockerContext: ./ml_cont
       DockerTag: python3.8-v1
 
-# Outputs:
+  PrimeFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Description: Prime function
+      CodeUri: prime/
+      Handler: app.lambda_handler
+      Runtime: python3.8
+      Events:
+        CloudWatchEvent:
+          Type: Schedule
+          Properties:
+            Schedule: cron(*/30 * * * ? *)
+
+  PrimeContFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Description: Prime Cont function
+      PackageType: Image
+      Events:
+        CloudWatchEvent:
+          Type: Schedule
+          Properties:
+            Schedule: cron(*/30 * * * ? *)
+    Metadata:
+      Dockerfile: Dockerfile
+      DockerContext: ./prime_cont
+      DockerTag: python3.8-v1
+
+  ImgPillowFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Description: ImgPillow function
+      CodeUri: ImgPillow/
+      Handler: app.lambda_handler
+      Runtime: python3.8
+      Events:
+        CloudWatchEvent:
+          Type: Schedule
+          Properties:
+            Schedule: cron(*/30 * * * ? *)
+
+  ImgPillowContFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Description: ImgPillow Cont Function
+      PackageType: Image
+      Events:
+        CloudWatchEvent:
+          Type: Schedule
+          Properties:
+            Schedule: cron(*/30 * * * ? *)
+    Metadata:
+      Dockerfile: Dockerfile
+      DockerContext: ./ImgPillow_cont
+      DockerTag: python3.8-v1

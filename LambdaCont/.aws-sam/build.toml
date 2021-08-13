@@ -36,58 +36,97 @@ source_md5 = ""
 packagetype = "Zip"
 functions = ["Hash128Function"]
 
-[function_build_definitions.d74e7c0e-b9cb-4516-90f6-6bd1d5bb9e64]
+[function_build_definitions.afaa11d6-e4d8-411f-9755-499b9733f88b]
+codeuri = "/home/ec2-user/CheckRide/LambdaCont/prime"
+runtime = "python3.8"
+source_md5 = ""
+packagetype = "Zip"
+functions = ["PrimeFunction"]
+
+[function_build_definitions.4c681b66-51bd-4bc7-b8f2-60a4f3f8038e]
+codeuri = "/home/ec2-user/CheckRide/LambdaCont/ImgPillow"
+runtime = "python3.8"
+source_md5 = ""
+packagetype = "Zip"
+functions = ["ImgPillowFunction"]
+
+[function_build_definitions.930e667f-ef85-47a9-bafc-707aaa6904c5]
+codeuri = "/home/ec2-user/CheckRide/LambdaCont/ml"
+runtime = "python3.8"
+source_md5 = ""
+packagetype = "Zip"
+functions = ["MLFunction"]
+
+[function_build_definitions.2819709c-9f30-4ad0-9887-8ef2b5e8c6f2]
 packagetype = "Image"
 functions = ["HelloWorldContFunction"]
 
-[function_build_definitions.d74e7c0e-b9cb-4516-90f6-6bd1d5bb9e64.metadata]
+[function_build_definitions.2819709c-9f30-4ad0-9887-8ef2b5e8c6f2.metadata]
 Dockerfile = "Dockerfile"
 DockerContext = "/home/ec2-user/CheckRide/LambdaCont/hello_world_cont"
 DockerTag = "python3.8-v1"
 
-[function_build_definitions.98614232-6e6e-47fe-a118-35c2097dde2f]
+[function_build_definitions.fc5f76f6-3790-49c4-8bd8-016d888d40e0]
 packagetype = "Image"
 functions = ["DataprocessContFunction"]
 
-[function_build_definitions.98614232-6e6e-47fe-a118-35c2097dde2f.metadata]
+[function_build_definitions.fc5f76f6-3790-49c4-8bd8-016d888d40e0.metadata]
 Dockerfile = "Dockerfile"
 DockerContext = "/home/ec2-user/CheckRide/LambdaCont/dataprocess_cont"
 DockerTag = "python3.8-v1"
 
-[function_build_definitions.63c293e3-0a53-413f-9ec3-8683f9ed885d]
+[function_build_definitions.413bfd38-02b5-4823-8252-2004347ad449]
 packagetype = "Image"
 functions = ["SmallDataprocessContFunction"]
 
-[function_build_definitions.63c293e3-0a53-413f-9ec3-8683f9ed885d.metadata]
+[function_build_definitions.413bfd38-02b5-4823-8252-2004347ad449.metadata]
 Dockerfile = "Dockerfile"
 DockerContext = "/home/ec2-user/CheckRide/LambdaCont/small_dataprocess_cont"
 DockerTag = "python3.8-v1"
 
-[function_build_definitions.b8a54757-13f1-40bd-bf3c-c35b7912faa0]
+[function_build_definitions.d8c4f61f-3a61-4792-a4df-a2d9ffe59012]
 packagetype = "Image"
 functions = ["Hash128ContFunction"]
 
-[function_build_definitions.b8a54757-13f1-40bd-bf3c-c35b7912faa0.metadata]
+[function_build_definitions.d8c4f61f-3a61-4792-a4df-a2d9ffe59012.metadata]
 Dockerfile = "Dockerfile"
 DockerContext = "/home/ec2-user/CheckRide/LambdaCont/hash128_cont"
 DockerTag = "python3.8-v1"
 
-[function_build_definitions.6a8373ad-6a59-4da7-b39a-eefdcff11ec6]
+[function_build_definitions.a5ddde3a-7a00-4fe3-baf0-4a9cf8019583]
 packagetype = "Image"
 functions = ["Hash250ContFunction"]
 
-[function_build_definitions.6a8373ad-6a59-4da7-b39a-eefdcff11ec6.metadata]
+[function_build_definitions.a5ddde3a-7a00-4fe3-baf0-4a9cf8019583.metadata]
 Dockerfile = "Dockerfile"
 DockerContext = "/home/ec2-user/CheckRide/LambdaCont/hash250_cont"
 DockerTag = "python3.8-v1"
 
-[function_build_definitions.0710df9e-e9dd-45ea-bca5-c1c7da5a0963]
+[function_build_definitions.8b1d3c5a-7602-41ca-adba-877d964ddfa0]
 packagetype = "Image"
 functions = ["MLContFunction"]
 
-[function_build_definitions.0710df9e-e9dd-45ea-bca5-c1c7da5a0963.metadata]
+[function_build_definitions.8b1d3c5a-7602-41ca-adba-877d964ddfa0.metadata]
 Dockerfile = "Dockerfile"
 DockerContext = "/home/ec2-user/CheckRide/LambdaCont/ml_cont"
+DockerTag = "python3.8-v1"
+
+[function_build_definitions.60de7848-688d-4b9e-9a2f-305c5752a16d]
+packagetype = "Image"
+functions = ["PrimeContFunction"]
+
+[function_build_definitions.60de7848-688d-4b9e-9a2f-305c5752a16d.metadata]
+Dockerfile = "Dockerfile"
+DockerContext = "/home/ec2-user/CheckRide/LambdaCont/prime_cont"
+DockerTag = "python3.8-v1"
+
+[function_build_definitions.f07e743a-0f14-47a9-a235-b0dcc78bb390]
+packagetype = "Image"
+functions = ["ImgPillowContFunction"]
+
+[function_build_definitions.f07e743a-0f14-47a9-a235-b0dcc78bb390.metadata]
+Dockerfile = "Dockerfile"
+DockerContext = "/home/ec2-user/CheckRide/LambdaCont/ImgPillow_cont"
 DockerTag = "python3.8-v1"
 
 [layer_build_definitions]
